@@ -27,7 +27,10 @@ on:
 concurrency:
   group: stock-analysis
   cancel-in-progress: false
-
+env:
+  STOCK_LIST: ${{ secrets.STOCK_LIST }}
+  FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+  # 如果有其他需要的 secret 也可以加上
 jobs:
   analyze:
     runs-on: ubuntu-latest
